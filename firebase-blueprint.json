@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "GuestbookMessage": {
+      "title": "GuestbookMessage",
+      "description": "Pesan anonim atau bertanda untuk Mading kelas IX-H Spensari",
+      "type": "object",
+      "properties": {
+        "author": {
+          "type": "string",
+          "description": "Nama pengirim atau nama samaran misterius"
+        },
+        "avatar": {
+          "type": "string",
+          "description": "Emoji avatar mistis (👻, 💀, 🕯️, 🖤, 🔮)"
+        },
+        "text": {
+          "type": "string",
+          "description": "Isi pesan atau kesan untuk kelas IX-H"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Waktu pesan dibuat dalam ISO string"
+        },
+        "dateFormatted": {
+          "type": "string",
+          "description": "Format tanggal bahasa Indonesia"
+        },
+        "reactions": {
+          "type": "object",
+          "description": "Jumlah reaksi emoji (ghost, candle, skull)"
+        }
+      },
+      "required": ["author", "avatar", "text", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/guestbook/{messageId}": {
+      "schema": "GuestbookMessage",
+      "description": "Koleksi publik pesan & kesan mading kelas IX-H Spensari"
+    }
+  }
+}

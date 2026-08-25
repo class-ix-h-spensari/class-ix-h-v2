@@ -1,0 +1,6 @@
+{
+  "name": "IX-H · Kelas Horor",
+  "description": "Website kelas IX-H Spensari dengan tema horor gothic, struktur kepengurusan kelas, daftar 32 siswa dengan Kartu Pelajar 3D, galeri dokumentasi, berita acara, TTS horor, audio ambience, dan mading pesan-kesan real-time cloud Firebase Firestore.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

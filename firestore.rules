@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Mading Pesan & Kesan Anonim IX-H Spensari
+    match /guestbook/{messageId} {
+      // Siapapun pengunjung website kelas boleh membaca mading
+      allow read: if true;
+      
+      // Siapapun boleh membuat pesan baru dengan validasi teks & nama wajar
+      allow create: if request.resource.data.author is string
+                    && request.resource.data.author.size() > 0
+                    && request.resource.data.author.size() <= 60
+                    && request.resource.data.text is string
+                    && request.resource.data.text.size() > 0
+                    && request.resource.data.text.size() <= 1000
+                    && request.resource.data.avatar is string
+                    && request.resource.data.createdAt is string;
+                    
+      // Pengunjung dapat memperbarui reaksi emoji (reaksi increment)
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reactions']);
+      
+      // Tidak mengizinkan penghapusan sembarangan
+      allow delete: if false;
+    }
+  }
+}
