@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IX-H · Kelas Horor SPENSARI</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Creepster&family=JetBrains+Mono:wght@400;600;800&family=Libre+Barcode+39&family=Libre+Barcode+39+Text&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- App Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Ambience Canvas & Stars -->
+  <canvas id="mistCanvas"></canvas>
+  <div id="stars-"></div>
+
+  <!-- =========================================================
+       NAVIGATION BAR
+       ========================================================= -->
+  <header class="header-nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-brand">
+        <div class="nav-brand-logo">
+          <i class="fas fa-skull"></i>
+        </div>
+        <div class="nav-brand-text">
+          <h1>IX-H SPENSARI</h1>
+          <span>KELAS HOROR · 2026</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu-wrapper" id="navMenuWrapper">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active"><i class="fas fa-ghost"></i> Beranda</a></li>
+          <li><a href="#visimisi" class="nav-link"><i class="fas fa-scroll"></i> Visi Misi</a></li>
+          <li><a href="#struktur" class="nav-link"><i class="fas fa-sitemap"></i> Struktur</a></li>
+          <li><a href="#siswa" class="nav-link"><i class="fas fa-users"></i> Siswa (32)</a></li>
+          <li><a href="#jadwal" class="nav-link"><i class="fas fa-calendar-alt"></i> Jadwal</a></li>
+          <li><a href="#mading" class="nav-link"><i class="fas fa-comments"></i> Mading</a></li>
+          <li><a href="#galeri" class="nav-link"><i class="fas fa-images"></i> Galeri</a></li>
+          <li><a href="#berita" class="nav-link"><i class="fas fa-newspaper"></i> Berita</a></li>
+          <li><a href="#sosmed" class="nav-link"><i class="fas fa-share-alt"></i> Medsos</a></li>
+          <li><a href="#game" class="nav-link"><i class="fas fa-gamepad"></i> Game Hub</a></li>
+          <li><a href="#lokasi" class="nav-link"><i class="fas fa-map-marked-alt"></i> Lokasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="modeToggleNav" class="theme-toggle-btn" title="Ganti Mode Nyaman/Horor">
+          <i class="fas fa-moon"></i> <span>Mode Nyaman</span>
+        </button>
+        <button id="themePaletteBtn" class="theme-toggle-btn" title="Ganti Palet Warna (Gothic/Moonlight)">
+          <i class="fas fa-palette"></i>
+        </button>
+        <button id="openAdminBtn" class="admin-btn" title="Portal Admin">
+          <i class="fas fa-shield-alt"></i> <span>Admin</span>
+        </button>
+        <button id="mobileNavToggle" class="mobile-nav-btn" title="Menu Navigasi" aria-label="Toggle Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       HERO SECTION
+       ========================================================= -->
+  <main class="container">
+    <section id="home" class="hero-section">
+      <div class="hero-badge">
+        <i class="fas fa-fire-alt"></i> <span>SMP NEGERI 1 · KELAS <span class="no-wrap">IX-H</span> · ANGKATAN 2026</span>
+      </div>
+      <h1 class="hero-title"><span class="no-wrap">IX-H</span> · SOLIDARITAS ABADI</h1>
+      <p class="hero-subtitle">
+        "Di mana bayangan merajut kebersamaan, dan setiap detik mengukir kenangan abadi.<br class="hide-mobile"> 
+        Wali Kelas: <strong>Ibu Siti Nur Syamsyiah, S.Pd</strong> · Ketua: <strong>Hikmal Syukri</strong>"
+      </p>
+
+      <div class="hero-highlights">
+        <div class="hero-stat-card">
+          <i class="fas fa-users"></i>
+          <div>
+            <strong>32 Siswa</strong>
+            <span>18 Putra · 14 Putri</span>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <i class="fas fa-crown"></i>
+          <div>
+            <strong>12 Pengurus</strong>
+            <span>Kepengurusan Kelas</span>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <i class="fas fa-tint"></i>
+          <div>
+            <strong>100% Solid</strong>
+            <span>Kekeluargaan</span>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <i class="fas fa-trophy"></i>
+          <div>
+            <strong>Juara 1</strong>
+            <span>Lomba Kebersihan</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Countdown Widget -->
+      <div class="countdown-container">
+        <div class="countdown-header">
+          <div class="countdown-title">
+            <i class="fas fa-hourglass-half text-crimson"></i> HITUNG MUNDUR MENUJU MOMEN BESAR
+          </div>
+          <select id="eventSelector" class="countdown-event-selector">
+            <option value="ujian">Ujian Sekolah Akhir (18 Mei 2026)</option>
+            <option value="perpisahan">Wisuda & Perpisahan (20 Juni 2026)</option>
+            <option value="hut">HUT Spensari (15 Agustus 2026)</option>
+          </select>
+        </div>
+        <div class="countdown-grid">
+          <div class="countdown-box">
+            <div id="cdDays" class="countdown-number">84</div>
+            <div class="countdown-label">Hari</div>
+          </div>
+          <div class="countdown-box">
+            <div id="cdHours" class="countdown-number">12</div>
+            <div class="countdown-label">Jam</div>
+          </div>
+          <div class="countdown-box">
+            <div id="cdMinutes" class="countdown-number">30</div>
+            <div class="countdown-label">Menit</div>
+          </div>
+          <div class="countdown-box">
+            <div id="cdSeconds" class="countdown-number">45</div>
+            <div class="countdown-label">Detik</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         VISI & MISI SECTION
+         ========================================================= -->
+    <section id="visimisi" class="section-pad">
+      <h2 class="section-title font-horror">VISI & MISI KELAS</h2>
+      <p class="section-subtitle">Prinsip sakral yang memandu seluruh penghuni IX-H menuju kejayaan dan persaudaraan tanpa batas.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <div class="glass-panel" style="padding: 28px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+            <div style="width:40px; height:40px; border-radius:10px; background:rgba(220,38,38,0.2); display:flex; align-items:center; justify-content:center; color:#ef4444; font-size:1.2rem;">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3 style="font-size:1.25rem; color:#fff; font-weight:800;">VISI KELAS</h3>
+          </div>
+          <p style="color:var(--text-silver); line-height:1.7; font-size:0.92rem;">
+            "Menjadikan kelas IX-H sebagai wadah insan berprestasi, berintegritas tinggi, solid dalam kekeluargaan tanpa sekat, berkarakter mulia, serta siap menaklukkan segala rintangan demi menggapai masa depan gilang-gemilang."
+          </p>
+        </div>
+
+        <div class="glass-panel" style="padding: 28px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+            <div style="width:40px; height:40px; border-radius:10px; background:rgba(220,38,38,0.2); display:flex; align-items:center; justify-content:center; color:#ef4444; font-size:1.2rem;">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3 style="font-size:1.25rem; color:#fff; font-weight:800;">MISI KELAS</h3>
+          </div>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--text-silver); font-size:0.88rem;">
+            <li style="display:flex; gap:10px; align-items:flex-start;"><i class="fas fa-skull text-crimson" style="margin-top:4px;"></i> Menjunjung tinggi rasa hormat kepada bapak/ibu guru dan sesama teman.</li>
+            <li style="display:flex; gap:10px; align-items:flex-start;"><i class="fas fa-skull text-crimson" style="margin-top:4px;"></i> Menjaga kebersihan, kerapian, dan kenyamanan sarana kelas setiap hari.</li>
+            <li style="display:flex; gap:10px; align-items:flex-start;"><i class="fas fa-skull text-crimson" style="margin-top:4px;"></i> Meningkatkan kedisiplinan dan prestasi akademik maupun non-akademik.</li>
+            <li style="display:flex; gap:10px; align-items:flex-start;"><i class="fas fa-skull text-crimson" style="margin-top:4px;"></i> Menjaga solidaritas sejati: tiada penghuni yang tertinggal atau ditinggalkan.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         STRUKTUR ORGANISASI KELAS (12 PENGURUS)
+         ========================================================= -->
+    <section id="struktur" class="section-pad">
+      <h2 class="section-title font-horror">STRUKTUR KELAS IX-H</h2>
+      <p class="section-subtitle">Para penjaga tatanan dan pilar penggerak di bawah kepemimpinan Ibu Siti Nur Syamsyiah & Hikmal Syukri.</p>
+
+      <div id="strukturGrid" class="tree-view">
+        <div class="tree-level">
+          <div class="org-card leader">
+            <div class="org-card-badge"><i class="fas fa-crown"></i> WALI KELAS</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">SN</div></div>
+            <div class="org-name">Ibu Siti Nur Syamsyiah, S.Pd</div>
+            <div class="org-role">Pembina & Pelindung</div>
+          </div>
+        </div>
+        <div class="tree-level">
+          <div class="org-card">
+            <div class="org-card-badge" style="background:linear-gradient(90deg, #991b1b, #dc2626)">Ketua Kelas</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">HS</div></div>
+            <div class="org-name">Hikmal Syukri Febriyanto</div>
+            <div class="org-role">Pemimpin Barisan</div>
+          </div>
+          <div class="org-card">
+            <div class="org-card-badge" style="background:linear-gradient(90deg, #1e3a8a, #3b82f6)">Wakil Ketua</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">RZ</div></div>
+            <div class="org-name">Rafi Azka Zaidan</div>
+            <div class="org-role">Panglima Pendamping</div>
+          </div>
+        </div>
+        <div class="tree-level">
+          <div class="org-card">
+            <div class="org-card-badge">Bendahara 1</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">SN</div></div>
+            <div class="org-name">Sabrina Nur Salsabila</div>
+            <div class="org-role">Pengelola Kas 1</div>
+          </div>
+          <div class="org-card">
+            <div class="org-card-badge">Bendahara 2</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">AK</div></div>
+            <div class="org-name">Afiqa Khairunnisa</div>
+            <div class="org-role">Pengelola Kas 2</div>
+          </div>
+          <div class="org-card">
+            <div class="org-card-badge">Sekretaris 1</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">SN</div></div>
+            <div class="org-name">Safa Nurul Afifah</div>
+            <div class="org-role">Pencatat Sejarah 1</div>
+          </div>
+          <div class="org-card">
+            <div class="org-card-badge">Sekretaris 2</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">FS</div></div>
+            <div class="org-name">Firsta Septiasa Nur Fitri</div>
+            <div class="org-role">Pencatat Sejarah 2</div>
+          </div>
+          <div class="org-card">
+            <div class="org-card-badge">Seksi Kebersihan 1</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">AN</div></div>
+            <div class="org-name">Aira Nisathaullah Mumtazah</div>
+            <div class="org-role">Penjaga Kebersihan</div>
+          </div>
+          <div class="org-card">
+            <div class="org-card-badge">Seksi Kebersihan 2</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">VA</div></div>
+            <div class="org-name">Vanesh Amelia Putri</div>
+            <div class="org-role">Penjaga Kebersihan</div>
+          </div>
+          <div class="org-card">
+            <div class="org-card-badge">Seksi Keamanan 1</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">AN</div></div>
+            <div class="org-name">Awal Nur Ardiansyah</div>
+            <div class="org-role">Pengawal Ketertiban</div>
+          </div>
+          <div class="org-card">
+            <div class="org-card-badge">Seksi Keamanan 2</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">FS</div></div>
+            <div class="org-name">Fauzan Setiawan</div>
+            <div class="org-role">Pengawal Ketertiban</div>
+          </div>
+          <div class="org-card">
+            <div class="org-card-badge">Seksi Keamanan 3</div>
+            <div class="org-avatar-wrap"><div class="org-avatar">AS</div></div>
+            <div class="org-name">Azam Setia Pratama</div>
+            <div class="org-role">Pengawal Ketertiban</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         DAFTAR 32 SISWA (PENGHUNI IX-H)
+         ========================================================= -->
+    <section id="siswa" class="section-pad">
+      <h2 class="section-title font-horror">32 PENGHUNI IX-H</h2>
+      <p class="section-subtitle">Daftar lengkap 32 siswa kelas IX-H. Klik kartu manapun untuk membuka <strong>Kartu Pelajar 3D</strong> yang dapat dibalik!</p>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <div class="search-input-wrap">
+          <i class="fas fa-search"></i>
+          <input type="text" id="studentSearch" class="search-input" placeholder="Cari nama siswa atau nomor absen...">
+        </div>
+        <div class="filter-pills">
+          <button class="filter-btn active" data-filter="all">Semua (32)</button>
+          <button class="filter-btn" data-filter="L">♂️ Laki-laki (15)</button>
+          <button class="filter-btn" data-filter="P">♀️ Perempuan (17)</button>
+        </div>
+      </div>
+
+      <!-- Students Grid (Pre-rendered 32 students) -->
+      <div id="siswaGrid" class="students-grid">
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[0])"><div class="student-no-badge">#1</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">AK</div></div><div class="student-name">Afiqa Khairunnisa</div><div class="student-dream"><i class="fas fa-bullseye"></i> Polwan</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[1])"><div class="student-no-badge">#2</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">AS</div></div><div class="student-name">Agisti Safa Nur Ramadhani</div><div class="student-dream"><i class="fas fa-bullseye"></i> Kriminolog</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[2])"><div class="student-no-badge">#3</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">AN</div></div><div class="student-name">Aira Nisathaullah Mumtazah</div><div class="student-dream"><i class="fas fa-bullseye"></i> Penulis</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[3])"><div class="student-no-badge">#4</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">AN</div></div><div class="student-name">Awal Nur Ardiansyah</div><div class="student-dream"><i class="fas fa-bullseye"></i> Pengusaha</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[4])"><div class="student-no-badge">#5</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">AM</div></div><div class="student-name">Axzaan May Ash Haabal</div><div class="student-dream"><i class="fas fa-bullseye"></i> Bos Muda</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[5])"><div class="student-no-badge">#6</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">AS</div></div><div class="student-name">Azam Setia Pratama</div><div class="student-dream"><i class="fas fa-bullseye"></i> Pengusaha</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[6])"><div class="student-no-badge">#7</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">FS</div></div><div class="student-name">Fauzan Setiawan</div><div class="student-dream"><i class="fas fa-bullseye"></i> Pengusaha</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[7])"><div class="student-no-badge">#8</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">FS</div></div><div class="student-name">Firsta Septiasa Nur Fitri</div><div class="student-dream"><i class="fas fa-bullseye"></i> Dokter</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[8])"><div class="student-no-badge">#9</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">GP</div></div><div class="student-name">Ghani Putra Akmal Muazzam</div><div class="student-dream"><i class="fas fa-bullseye"></i> Pengusaha</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[9])"><div class="student-no-badge">#10</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">HL</div></div><div class="student-name">Haliza Lutfia Tunisa</div><div class="student-dream"><i class="fas fa-bullseye"></i> Polwan</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[10])"><div class="student-no-badge">#11</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">HA</div></div><div class="student-name">Herul Arifien</div><div class="student-dream"><i class="fas fa-bullseye"></i> CEO</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[11])"><div class="student-no-badge">#12</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">HS</div></div><div class="student-name">Hikmal Syukri Febriyanto</div><div class="student-dream"><i class="fas fa-bullseye"></i> Hakim</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[12])"><div class="student-no-badge">#13</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">IN</div></div><div class="student-name">Intan Nuraeni</div><div class="student-dream"><i class="fas fa-bullseye"></i> Koki</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[13])"><div class="student-no-badge">#14</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">IA</div></div><div class="student-name">Ismia Arum</div><div class="student-dream"><i class="fas fa-bullseye"></i> Dokter</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[14])"><div class="student-no-badge">#15</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">MV</div></div><div class="student-name">Mahfiz Verona</div><div class="student-dream"><i class="fas fa-bullseye"></i> Polwan</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[15])"><div class="student-no-badge">#16</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">MA</div></div><div class="student-name">Maida Astagina Hernawayanto</div><div class="student-dream"><i class="fas fa-bullseye"></i> Guru</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[16])"><div class="student-no-badge">#17</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">MI</div></div><div class="student-name">Muhammad Ikhsan Maulana</div><div class="student-dream"><i class="fas fa-bullseye"></i> Pengusaha</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[17])"><div class="student-no-badge">#18</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">MI</div></div><div class="student-name">Muhammad Iqbal Nur Hidayat</div><div class="student-dream"><i class="fas fa-bullseye"></i> Pengusaha</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[18])"><div class="student-no-badge">#19</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">RD</div></div><div class="student-name">Rafael Dimas Saputra</div><div class="student-dream"><i class="fas fa-bullseye"></i> Bos Muda</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[19])"><div class="student-no-badge">#20</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">RZ</div></div><div class="student-name">Rafi Azka Zaidan</div><div class="student-dream"><i class="fas fa-bullseye"></i> TNI-AL</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[20])"><div class="student-no-badge">#21</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">RN</div></div><div class="student-name">Reza Nur Pratama</div><div class="student-dream"><i class="fas fa-bullseye"></i> CEO</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[21])"><div class="student-no-badge">#22</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">RS</div></div><div class="student-name">Reziqq Syah Nur Syarif</div><div class="student-dream"><i class="fas fa-bullseye"></i> TNI-AD</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[22])"><div class="student-no-badge">#23</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">RD</div></div><div class="student-name">Rifki Dias Aldiansah</div><div class="student-dream"><i class="fas fa-bullseye"></i> Owner Bus</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[23])"><div class="student-no-badge">#24</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">RA</div></div><div class="student-name">Rizky Afif Pratama</div><div class="student-dream"><i class="fas fa-bullseye"></i> Pengusaha</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[24])"><div class="student-no-badge">#25</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">RR</div></div><div class="student-name">Rizqa Ramadhani</div><div class="student-dream"><i class="fas fa-bullseye"></i> Dokter</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[25])"><div class="student-no-badge">#26</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">RJ</div></div><div class="student-name">Rizqi Jilan Aprilian P</div><div class="student-dream"><i class="fas fa-bullseye"></i> CEO</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[26])"><div class="student-no-badge">#27</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">SH</div></div><div class="student-name">Sabian Hafizh Faiddlurahman</div><div class="student-dream"><i class="fas fa-bullseye"></i> Masinis</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[27])"><div class="student-no-badge">#28</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">SN</div></div><div class="student-name">Sabrina Nur Salsabila</div><div class="student-dream"><i class="fas fa-bullseye"></i> Direktur Tambang</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[28])"><div class="student-no-badge">#29</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">SN</div></div><div class="student-name">Safa Nurul Afifah</div><div class="student-dream"><i class="fas fa-bullseye"></i> Pramugari</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[29])"><div class="student-no-badge">#30</div><div class="student-gender-badge L">♂️ Putra</div><div class="student-avatar-wrap"><div class="student-avatar">SN</div></div><div class="student-name">Syafii Nur Fadilah</div><div class="student-dream"><i class="fas fa-bullseye"></i> Pemain Bola</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[30])"><div class="student-no-badge">#31</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">TN</div></div><div class="student-name">Tria Nur Aisyahrani</div><div class="student-dream"><i class="fas fa-bullseye"></i> Guru</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+        <div class="student-card glass-panel" onclick="openStudentIdCard(siswaData[31])"><div class="student-no-badge">#32</div><div class="student-gender-badge P">♀️ Putri</div><div class="student-avatar-wrap"><div class="student-avatar">VA</div></div><div class="student-name">Vanesh Amelia Putri</div><div class="student-dream"><i class="fas fa-bullseye"></i> Polwan</div><div class="card-hint"><i class="fas fa-id-card"></i> Buka Kartu Pelajar 3D</div></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         JADWAL PELAJARAN & PIKET
+         ========================================================= -->
+    <section id="jadwal" class="section-pad">
+      <h2 class="section-title font-horror">JADWAL PELAJARAN & PIKET</h2>
+      <p class="section-subtitle">Agenda belajar mingguan dan giliran piket kebersihan kelas IX-H.</p>
+
+      <div class="schedule-tabs" id="scheduleTabs">
+        <button class="schedule-tab-btn active" data-day="senin">Senin</button>
+        <button class="schedule-tab-btn" data-day="selasa">Selasa</button>
+        <button class="schedule-tab-btn" data-day="rabu">Rabu</button>
+        <button class="schedule-tab-btn" data-day="kamis">Kamis</button>
+        <button class="schedule-tab-btn" data-day="jumat">Jumat</button>
+        <button class="schedule-tab-btn" data-day="sabtu">Sabtu</button>
+      </div>
+
+      <div class="schedule-content-grid">
+        <div class="schedule-table-wrap">
+          <h3 style="font-size:1.1rem; color:#fff; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+            <i class="fas fa-book text-crimson"></i> <span id="currentDayScheduleTitle">Mata Pelajaran Hari Ini</span>
+          </h3>
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Jam</th>
+                <th>Mata Pelajaran</th>
+                <th>Guru Pengampu</th>
+                <th>Ruang</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleTableBody">
+              <tr><td><span class="schedule-time-badge">07.00 - 07.45</span></td><td><strong>Upacara Bendera</strong></td><td>Pembina Upacara</td><td><span style="color:var(--text-muted); font-size:0.8rem;"><i class="fas fa-map-marker-alt"></i> Lapangan</span></td></tr>
+              <tr><td><span class="schedule-time-badge">07.45 - 09.05</span></td><td><strong>Bahasa Indonesia</strong></td><td>Dra. Hj. Nurjanah</td><td><span style="color:var(--text-muted); font-size:0.8rem;"><i class="fas fa-map-marker-alt"></i> R. IX-H</span></td></tr>
+              <tr><td><span class="schedule-time-badge">09.20 - 10.40</span></td><td><strong>Matematika</strong></td><td>Budi Santoso, M.Pd</td><td><span style="color:var(--text-muted); font-size:0.8rem;"><i class="fas fa-map-marker-alt"></i> R. IX-H</span></td></tr>
+              <tr><td><span class="schedule-time-badge">10.40 - 12.00</span></td><td><strong>Pendidikan Agama</strong></td><td>Ust. Ahmad S.Ag</td><td><span style="color:var(--text-muted); font-size:0.8rem;"><i class="fas fa-map-marker-alt"></i> R. IX-H</span></td></tr>
+              <tr><td><span class="schedule-time-badge">12.30 - 13.50</span></td><td><strong>IPA (Fisika)</strong></td><td>Drs. Eko Wahyudi</td><td><span style="color:var(--text-muted); font-size:0.8rem;"><i class="fas fa-map-marker-alt"></i> Lab IPA</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="piket-panel">
+          <div class="piket-header">
+            <i class="fas fa-broom text-crimson"></i>
+            <span id="piketDayTitle">Petugas Piket Hari Ini</span>
+          </div>
+          <div id="piketList" class="piket-list">
+            <div class="piket-item"><div class="piket-avatar">AK</div><div style="font-size:0.88rem; color:#fff; font-weight:600;">Afiqa Khairunnisa</div></div>
+            <div class="piket-item"><div class="piket-avatar">AN</div><div style="font-size:0.88rem; color:#fff; font-weight:600;">Awal Nur Ardiansyah</div></div>
+            <div class="piket-item"><div class="piket-avatar">HS</div><div style="font-size:0.88rem; color:#fff; font-weight:600;">Hikmal Syukri</div></div>
+            <div class="piket-item"><div class="piket-avatar">SN</div><div style="font-size:0.88rem; color:#fff; font-weight:600;">Safa Nurul</div></div>
+            <div class="piket-item"><div class="piket-avatar">VA</div><div style="font-size:0.88rem; color:#fff; font-weight:600;">Vanesh Amelia</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         MADING PESAN & KESAN (CLOUD FIRESTORE)
+         ========================================================= -->
+    <section id="mading" class="section-pad guestbook-section">
+      <div style="text-align: center; margin-bottom: 20px;">
+        <h2 class="section-title font-horror">MADING PESAN & KESAN</h2>
+        <p class="section-subtitle" style="margin-bottom:12px;">Tinggalkan jejak, pesan rahasia, kesan, atau semangat untuk kelas IX-H!</p>
+        <span class="gh-stats-badge" id="firestoreStatusBadge">
+          <i class="fas fa-cloud"></i> <span id="firestoreStatusText">Cloud Live (Firestore Online)</span>
+        </span>
+      </div>
+
+      <div class="guestbook-layout">
+        <!-- Form Post -->
+        <div class="guestbook-form-card">
+          <h3 style="font-size:1.1rem; color:#fff; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+            <i class="fas fa-feather-alt text-crimson"></i> Tulis Pesan Anonim
+          </h3>
+          
+          <form id="madingForm" onsubmit="return false;">
+            <div class="form-group">
+              <label class="form-label">Nama Samaran / Panggilan</label>
+              <input type="text" id="madingAuthor" class="form-input" placeholder="Misal: Si Bayangan Malam, Absen 12..." required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Pilih Avatar Mistis</label>
+              <div class="avatar-selector" id="avatarSelector">
+                <div class="avatar-option selected" data-avatar="👻">👻</div>
+                <div class="avatar-option" data-avatar="💀">💀</div>
+                <div class="avatar-option" data-avatar="🕯️">🕯️</div>
+                <div class="avatar-option" data-avatar="🔮">🔮</div>
+                <div class="avatar-option" data-avatar="🦇">🦇</div>
+                <div class="avatar-option" data-avatar="🕷️">🕷️</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Pesan / Kesan untuk IX-H</label>
+              <textarea id="madingText" class="form-textarea" placeholder="Tuliskan ucapan, kenangan, atau pesan motivasimu di sini..." required></textarea>
+            </div>
+
+            <button type="button" id="madingSubmitBtn" class="btn-primary">
+              <i class="fas fa-paper-plane"></i> Tancapkan di Mading
+            </button>
+          </form>
+        </div>
+
+        <!-- Live Feed -->
+        <div>
+          <h3 style="font-size:1.1rem; color:#fff; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+            <i class="fas fa-scroll text-crimson"></i> Suara Penghuni & Pengunjung
+          </h3>
+          <div id="guestbookFeed" class="guestbook-feed">
+            <div class="message-card">
+              <div class="message-header">
+                <div class="message-author">
+                  <span style="font-size:1.2rem;">👑</span>
+                  <span>Ibu Siti Nur Syamsyiah</span>
+                </div>
+                <div class="message-date">Baru saja</div>
+              </div>
+              <div class="message-body">Teruslah bersemangat anak-anakku IX-H tercinta! Raih cita-cita setinggi langit dan tetaplah rendah hati.</div>
+              <div class="message-reactions">
+                <button class="reaction-btn" data-type="ghost">👻 <span>24</span></button>
+                <button class="reaction-btn" data-type="candle">🕯️ <span>18</span></button>
+                <button class="reaction-btn" data-type="skull">💀 <span>12</span></button>
+              </div>
+            </div>
+            <div class="message-card">
+              <div class="message-header">
+                <div class="message-author">
+                  <span style="font-size:1.2rem;">👻</span>
+                  <span>Hikmal Syukri (Ketua Kelas)</span>
+                </div>
+                <div class="message-date">1 hari lalu</div>
+              </div>
+              <div class="message-body">Solidaritas kita abadi! Jangan pernah ada yang menyerah sebelum garis finish.</div>
+              <div class="message-reactions">
+                <button class="reaction-btn" data-type="ghost">👻 <span>19</span></button>
+                <button class="reaction-btn" data-type="candle">🕯️ <span>15</span></button>
+                <button class="reaction-btn" data-type="skull">💀 <span>8</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         GALERI FOTO DOKUMENTASI
+         ========================================================= -->
+    <section id="galeri" class="section-pad">
+      <h2 class="section-title font-horror">GALERI DOKUMENTASI</h2>
+      <p class="section-subtitle">Potret kenangan, aksi, dan peristiwa sakral IX-H selama di bangku sekolah.</p>
+
+      <div class="gallery-filter-bar">
+        <button class="filter-btn active" data-gallery="all">Semua Foto (6)</button>
+        <button class="filter-btn" data-gallery="kegiatan">Kegiatan</button>
+        <button class="filter-btn" data-gallery="prestasi">Prestasi</button>
+        <button class="filter-btn" data-gallery="horor">Tema Horor</button>
+      </div>
+
+      <div id="dokumentasiGrid" class="gallery-grid">
+        <div class="gallery-card"><img src="dok1.jpg" class="gallery-img" alt="Kekompakan Penghuni IX-H" onerror="this.src='acara1.jpg';"><div class="gallery-overlay"><div class="gallery-caption">Kekompakan Penghuni IX-H di Lapangan Utama Spensari</div><div class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></div></div></div>
+        <div class="gallery-card"><img src="dok2.jpg" class="gallery-img" alt="Penyerahan Piala Juara 1" onerror="this.src='acara2.jpg';"><div class="gallery-overlay"><div class="gallery-caption">Penyerahan Piala Juara 1 Lomba Kebersihan Kelas</div><div class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></div></div></div>
+        <div class="gallery-card"><img src="dok3.jpg" class="gallery-img" alt="Dekorasi Horror Class" onerror="this.src='acara3.jpg';"><div class="gallery-overlay"><div class="gallery-caption">Dekorasi Horror Class Spensari Halloween Special</div><div class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></div></div></div>
+        <div class="gallery-card"><img src="dok4.jpg" class="gallery-img" alt="Sesi Belajar Bersama" onerror="this.src='dok2.jpg';"><div class="gallery-overlay"><div class="gallery-caption">Sesi Belajar Bersama & Persiapan Ujian Sekolah</div><div class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></div></div></div>
+        <div class="gallery-card"><img src="dok5.jpg" class="gallery-img" alt="Kunjungan Edukasi Museum" onerror="this.src='acara2.jpg';"><div class="gallery-overlay"><div class="gallery-caption">Kunjungan Edukasi Museum & Cagar Budaya</div><div class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></div></div></div>
+        <div class="gallery-card"><img src="dok6.jpg" class="gallery-img" alt="Kenangan Manis Kebersamaan" onerror="this.src='acara1.jpg';"><div class="gallery-overlay"><div class="gallery-caption">Kenangan Manis Kebersamaan Seluruh Penghuni IX-H</div><div class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></div></div></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BERITA & ACARA KELAS
+         ========================================================= -->
+    <section id="berita" class="section-pad">
+      <h2 class="section-title font-horror">BERITA & ACARA KELAS</h2>
+      <p class="section-subtitle">Warta terkini mengenai petualangan dan prestasi penghuni IX-H.</p>
+
+      <div id="beritaGrid" class="news-grid">
+        <div class="news-card">
+          <div class="news-thumb-wrap"><img src="acara1.jpg" class="news-thumb" alt="Juara 1 Kebersihan" onerror="this.src='dok2.jpg';"></div>
+          <div class="news-body">
+            <div class="news-date"><i class="fas fa-calendar-alt"></i> 10 Agustus 2026</div>
+            <div class="news-title">🏆 Juara 1 Lomba Kebersihan Kelas!</div>
+            <div class="news-excerpt">Kelas IX-H berhasil meraih juara 1 lomba kebersihan kelas! Kerja keras menata ruangan, menghias tema horor, dan menjaga kebersihan membuahkan hasil membanggakan.</div>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-thumb-wrap"><img src="acara2.jpg" class="news-thumb" alt="Study Tour" onerror="this.src='dok5.jpg';"></div>
+          <div class="news-body">
+            <div class="news-date"><i class="fas fa-calendar-alt"></i> 14 September 2026</div>
+            <div class="news-title">Study Tour Edukasi ke Museum Sejarah</div>
+            <div class="news-excerpt">Petualangan seru mendalami jejak peradaban masa lampau. Banyak artefak kuno dan wawasan sejarah baru yang membuat kami terpukau!</div>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-thumb-wrap"><img src="acara3.jpg" class="news-thumb" alt="Pentas Seni" onerror="this.src='dok3.jpg';"></div>
+          <div class="news-body">
+            <div class="news-date"><i class="fas fa-calendar-alt"></i> 28 Oktober 2026</div>
+            <div class="news-title">Pentas Seni & Gelar Budaya Spensari</div>
+            <div class="news-excerpt">Penghuni IX-H tampil memukau dalam paduan suara dan teater drama mistis yang menyihir seluruh penonton di aula utama.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         MEDIA SOSIAL RESMI KELAS IX-H (TIKTOK, INSTAGRAM, SPOTIFY)
+         ========================================================= -->
+    <section id="sosmed" class="section-pad">
+      <h2 class="section-title font-horror">MEDIA SOSIAL RESMI IX-H</h2>
+      <p class="section-subtitle">Ikuti keseruan momen kelas, video TikTok viral, cerita Instagram harian, dan dengarkan playlist resmi Spotify kami!</p>
+
+      <div class="sosmed-grid">
+        
+        <!-- ================= CARD 1: TIKTOK ================= -->
+        <div class="sosmed-card">
+          <div class="sosmed-card-header">
+            <div class="sosmed-brand-info">
+              <div class="sosmed-icon-badge tiktok">
+                <i class="fab fa-tiktok"></i>
+              </div>
+              <div class="sosmed-title-text">
+                <h3>TikTok IX-H <i class="fas fa-check-circle" style="color:#25F4EE; font-size:0.85rem;"></i></h3>
+                <span id="tiktokHandleDisplay">@theclass.of_ix</span>
+              </div>
+            </div>
+            <span class="sosmed-badge-tag tiktok">Official TikTok</span>
+          </div>
+
+          <!-- Video Showcase Feeds -->
+          <div class="tiktok-video-list">
+            <a href="https://www.tiktok.com/@theclass.of_ix" target="_blank" rel="noopener noreferrer" class="tiktok-video-card" style="text-decoration:none;">
+              <div class="tiktok-thumb-box">
+                <img src="dok3.jpg" alt="Video Horor Class" onerror="this.src='acara3.jpg';">
+                <span class="tiktok-play-badge"><i class="fas fa-play"></i> 14.8K</span>
+              </div>
+              <div class="tiktok-video-meta">
+                <div class="tiktok-video-title">POV: Suasana Kelas Horor IX-H Saat Jam Kosong 💀👻</div>
+                <div class="tiktok-video-sound"><i class="fas fa-music"></i> Sound Breakbeat Horor Spensari</div>
+                <div class="tiktok-video-stats">
+                  <span><i class="fas fa-heart text-crimson"></i> 2.4K</span>
+                  <span><i class="fas fa-comment"></i> 340</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@theclass.of_ix" target="_blank" rel="noopener noreferrer" class="tiktok-video-card" style="text-decoration:none;">
+              <div class="tiktok-thumb-box">
+                <img src="dok2.jpg" alt="Video Juara 1" onerror="this.src='acara1.jpg';">
+                <span class="tiktok-play-badge"><i class="fas fa-play"></i> 28.5K</span>
+              </div>
+              <div class="tiktok-video-meta">
+                <div class="tiktok-video-title">Detik-detik IX-H Diumumkan Juara 1 Kebersihan! 🏆🔥</div>
+                <div class="tiktok-video-sound"><i class="fas fa-music"></i> We Are The Champions - Spensari Remix</div>
+                <div class="tiktok-video-stats">
+                  <span><i class="fas fa-heart text-crimson"></i> 5.1K</span>
+                  <span><i class="fas fa-comment"></i> 612</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@theclass.of_ix" target="_blank" rel="noopener noreferrer" class="tiktok-video-card" style="text-decoration:none;">
+              <div class="tiktok-thumb-box">
+                <img src="dok1.jpg" alt="Video Kebersamaan" onerror="this.src='acara2.jpg';">
+                <span class="tiktok-play-badge"><i class="fas fa-play"></i> 9.2K</span>
+              </div>
+              <div class="tiktok-video-meta">
+                <div class="tiktok-video-title">Absen 32 Siswa IX-H & Cita-Cita Masa Depan ✨</div>
+                <div class="tiktok-video-sound"><i class="fas fa-music"></i> Kenangan Manis IX-H Beat</div>
+                <div class="tiktok-video-stats">
+                  <span><i class="fas fa-heart text-crimson"></i> 1.8K</span>
+                  <span><i class="fas fa-comment"></i> 198</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="sosmed-action-row">
+            <a href="https://www.tiktok.com/@theclass.of_ix" id="tiktokOpenBtn" target="_blank" rel="noopener noreferrer" class="sosmed-btn tiktok">
+              <i class="fab fa-tiktok"></i> Follow di TikTok
+            </a>
+            <button type="button" class="sosmed-btn-outline" onclick="copySosmedLink('https://www.tiktok.com/@theclass.of_ix', 'TikTok ID disalin!')" title="Salin Link TikTok">
+              <i class="fas fa-copy"></i> Salin
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= CARD 2: INSTAGRAM ================= -->
+        <div class="sosmed-card">
+          <div class="sosmed-card-header">
+            <div class="sosmed-brand-info">
+              <div class="sosmed-icon-badge instagram">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div class="sosmed-title-text">
+                <h3>Instagram IX-H <i class="fas fa-check-circle" style="color:#dc2743; font-size:0.85rem;"></i></h3>
+                <span id="igHandleDisplay">@theclass.of_ixh</span>
+              </div>
+            </div>
+            <span class="sosmed-badge-tag instagram">Official Feed</span>
+          </div>
+
+          <!-- IG Profile Mini Bar -->
+          <div class="ig-profile-bar">
+            <div class="ig-avatar-ring">
+              <div class="ig-avatar-inner">
+                IX-H
+              </div>
+            </div>
+            <div class="ig-stats-row">
+              <div class="ig-stat-item">
+                <strong>32</strong>
+                <span>Postingan</span>
+              </div>
+              <div class="ig-stat-item">
+                <strong>1.4k</strong>
+                <span>Pengikut</span>
+              </div>
+              <div class="ig-stat-item">
+                <strong>32</strong>
+                <span>Mengikuti</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ig-bio">
+            <strong>Keluarga Besar IX-H SPENSARI</strong> 👻✨<br>
+            • Wali Kelas: Ibu Siti Nur Syamsyiah, S.Pd<br>
+            • Solidaritas Abadi · 18 Putra & 14 Putri
+          </div>
+
+          <!-- Story Highlights -->
+          <div class="ig-highlights-row">
+            <div class="ig-highlight-circle" onclick="window.location.href='#galeri'">
+              <div class="ig-hl-ring">🏆</div>
+              <span>Prestasi</span>
+            </div>
+            <div class="ig-highlight-circle" onclick="window.location.href='#galeri'">
+              <div class="ig-hl-ring">💀</div>
+              <span>Horor</span>
+            </div>
+            <div class="ig-highlight-circle" onclick="window.location.href='#galeri'">
+              <div class="ig-hl-ring">🎒</div>
+              <span>Study Tour</span>
+            </div>
+            <div class="ig-highlight-circle" onclick="window.location.href='#siswa'">
+              <div class="ig-hl-ring">👥</div>
+              <span>32 Siswa</span>
+            </div>
+          </div>
+
+          <!-- Feed Thumbnail Grid -->
+          <div class="ig-feed-grid">
+            <div class="ig-feed-thumb" onclick="openLightbox('dok1.jpg', 'Kebersamaan Penghuni IX-H di Lapangan Utama')">
+              <img src="dok1.jpg" alt="Feed 1" onerror="this.src='acara1.jpg';">
+              <div class="ig-feed-overlay"><i class="fas fa-heart text-crimson"></i> 412</div>
+            </div>
+            <div class="ig-feed-thumb" onclick="openLightbox('dok2.jpg', 'Piala Juara 1 Kebersihan Kelas')">
+              <img src="dok2.jpg" alt="Feed 2" onerror="this.src='acara2.jpg';">
+              <div class="ig-feed-overlay"><i class="fas fa-heart text-crimson"></i> 580</div>
+            </div>
+            <div class="ig-feed-thumb" onclick="openLightbox('dok3.jpg', 'Dekorasi Horror Class Spensari')">
+              <img src="dok3.jpg" alt="Feed 3" onerror="this.src='acara3.jpg';">
+              <div class="ig-feed-overlay"><i class="fas fa-heart text-crimson"></i> 640</div>
+            </div>
+            <div class="ig-feed-thumb" onclick="openLightbox('dok4.jpg', 'Sesi Belajar Bersama Menuju Ujian')">
+              <img src="dok4.jpg" alt="Feed 4" onerror="this.src='dok2.jpg';">
+              <div class="ig-feed-overlay"><i class="fas fa-heart text-crimson"></i> 320</div>
+            </div>
+            <div class="ig-feed-thumb" onclick="openLightbox('dok5.jpg', 'Kunjungan Edukasi Museum')">
+              <img src="dok5.jpg" alt="Feed 5" onerror="this.src='acara2.jpg';">
+              <div class="ig-feed-overlay"><i class="fas fa-heart text-crimson"></i> 495</div>
+            </div>
+            <div class="ig-feed-thumb" onclick="openLightbox('dok6.jpg', 'Kenangan Abadi IX-H SPENSARI')">
+              <img src="dok6.jpg" alt="Feed 6" onerror="this.src='acara1.jpg';">
+              <div class="ig-feed-overlay"><i class="fas fa-heart text-crimson"></i> 710</div>
+            </div>
+          </div>
+
+          <div class="sosmed-action-row">
+            <a href="https://www.instagram.com/theclass.of_ixh" id="igOpenBtn" target="_blank" rel="noopener noreferrer" class="sosmed-btn instagram">
+              <i class="fab fa-instagram"></i> Kunjungi Instagram
+            </a>
+            <button type="button" class="sosmed-btn-outline" onclick="copySosmedLink('https://www.instagram.com/theclass.of_ixh', 'Link Instagram disalin!')" title="Salin Link Instagram">
+              <i class="fas fa-copy"></i> Salin
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= CARD 3: SPOTIFY ================= -->
+        <div class="sosmed-card">
+          <div class="sosmed-card-header">
+            <div class="sosmed-brand-info">
+              <div class="sosmed-icon-badge spotify">
+                <i class="fab fa-spotify"></i>
+              </div>
+              <div class="sosmed-title-text">
+                <h3>Spotify IX-H <i class="fas fa-bolt" style="color:#1DB954; font-size:0.85rem;"></i></h3>
+                <span>Playlist Resmi Angkatan 2026</span>
+              </div>
+            </div>
+            <span class="sosmed-badge-tag spotify">Official Playlist</span>
+          </div>
+
+          <!-- Spotify Playlist Header Info -->
+          <div class="spotify-playlist-header">
+            <div class="spotify-cover-box">
+              <i class="fas fa-headphones-alt"></i>
+            </div>
+            <div class="spotify-meta-box">
+              <div class="spotify-playlist-title">IX-H Solidaritas & Dark Vibes</div>
+              <div class="spotify-playlist-desc">Kompilasi lagu favorit penghuni IX-H: Breakbeat horor, anthem persahabatan, & lagu fokus belajar.</div>
+            </div>
+          </div>
+
+          <!-- Interactive Track Highlights -->
+          <div class="spotify-track-list">
+            <div class="spotify-track-item" style="cursor:pointer;" onclick="playSelectedTrack('Breakbeat Horor IX-H (Gothic Beat)')">
+              <div class="spotify-track-left">
+                <span class="spotify-track-num">1</span>
+                <div>
+                  <div class="spotify-track-title">Breakbeat Horor IX-H (Theme Anthem)</div>
+                  <div class="spotify-track-artist">IX-H Sound System · 2026</div>
+                </div>
+              </div>
+              <span class="spotify-track-duration">▶ Putar</span>
+            </div>
+
+            <div class="spotify-track-item" style="cursor:pointer;" onclick="playSelectedTrack('Ingatlah Hari Ini')">
+              <div class="spotify-track-left">
+                <span class="spotify-track-num">2</span>
+                <div>
+                  <div class="spotify-track-title">Ingatlah Hari Ini (Kenangan Sahabat)</div>
+                  <div class="spotify-track-artist">Project Pop · Lagu Kebersamaan</div>
+                </div>
+              </div>
+              <span class="spotify-track-duration">▶ Putar</span>
+            </div>
+
+            <div class="spotify-track-item" style="cursor:pointer;" onclick="playSelectedTrack('Sebuah Kisah Klasik')">
+              <div class="spotify-track-left">
+                <span class="spotify-track-num">3</span>
+                <div>
+                  <div class="spotify-track-title">Sebuah Kisah Klasik Untuk Masa Depan</div>
+                  <div class="spotify-track-artist">Sheila On 7 · Lagu Perpisahan</div>
+                </div>
+              </div>
+              <span class="spotify-track-duration">▶ Putar</span>
+            </div>
+
+            <div class="spotify-track-item" style="cursor:pointer;" onclick="playSelectedTrack('Monokrom')">
+              <div class="spotify-track-left">
+                <span class="spotify-track-num">4</span>
+                <div>
+                  <div class="spotify-track-title">Monokrom (Lembaran Foto Kenangan)</div>
+                  <div class="spotify-track-artist">Tulus · Tribute Guru & Sahabat</div>
+                </div>
+              </div>
+              <span class="spotify-track-duration">▶ Putar</span>
+            </div>
+
+            <div class="spotify-track-item" style="cursor:pointer;" onclick="playSelectedTrack('Sampai Jumpa')">
+              <div class="spotify-track-left">
+                <span class="spotify-track-num">5</span>
+                <div>
+                  <div class="spotify-track-title">Sampai Jumpa (Wisuda Kelulusan)</div>
+                  <div class="spotify-track-artist">Endank Soekamti · Anthem Perpisahan</div>
+                </div>
+              </div>
+              <span class="spotify-track-duration">▶ Putar</span>
+            </div>
+          </div>
+
+          <div class="sosmed-action-row">
+            <a href="https://open.spotify.com/playlist/0BUiPuaXZNAJkvWwtMAWKj?si=2JIvzKKpSbCDq5LScpiGbQ&utm_source=copy-link&sci=spotify%3Acard-config%3A3J5erIHOw4xfXvRqtoOL8B" id="spotifyOpenBtn" target="_blank" rel="noopener noreferrer" class="sosmed-btn spotify">
+              <i class="fab fa-spotify"></i> Buka di Spotify
+            </a>
+            <button type="button" class="sosmed-btn-outline" onclick="copySosmedLink('https://open.spotify.com/playlist/0BUiPuaXZNAJkvWwtMAWKj?si=2JIvzKKpSbCDq5LScpiGbQ&utm_source=copy-link&sci=spotify%3Acard-config%3A3J5erIHOw4xfXvRqtoOL8B', 'Link Spotify disalin!')" title="Salin Playlist Spotify">
+              <i class="fas fa-copy"></i> Salin Link
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         DARK HORROR GAME HUB (8 GAMES + HALL OF FAME)
+         ========================================================= -->
+    <section id="game" class="section-pad">
+      <h2 class="section-title font-horror">IX-H DARK GAME HUB</h2>
+      <p class="section-subtitle">Uji ketajaman otak, kecepatan refleks gaib, ingatan mistis, dan taklukkan rekor tertinggi kelas!</p>
+
+      <div class="game-hub-container">
+        <!-- Hub Main Grid View -->
+        <div id="ghHub">
+          <div class="gh-header-bar">
+            <div class="gh-title-group">
+              <i class="fas fa-gamepad text-crimson" style="font-size: 1.5rem;"></i>
+              <h3>PILIH PERMAINAN</h3>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <span class="gh-stats-badge">
+                <i class="fas fa-play"></i> Dimainkan: <span id="ghStatPlayed">0</span>x
+              </span>
+              <button id="ghHOFBtn" class="gh-btn" style="width:auto; padding:6px 14px; background:rgba(220,38,38,0.2); border-color:var(--accent-crimson-glow);">
+                <i class="fas fa-trophy"></i> Hall of Fame
+              </button>
+            </div>
+          </div>
+
+          <div id="ghGrid" class="gh-grid">
+            <div class="gh-card">
+              <div class="gh-card-icon">🔢</div>
+              <div class="gh-card-title">MENTAL CALCULATION</div>
+              <div class="gh-card-desc">Uji akurasi & kecepatan berhitung, soal otomatis, jumlah soal bisa dikustom.</div>
+              <button class="gh-btn gh-btn-primary" onclick="openGame('mental-calculation')">MAINKAN</button>
+            </div>
+            <div class="gh-card">
+              <div class="gh-card-icon">⚡</div>
+              <div class="gh-card-title">EXTREME ADDITION</div>
+              <div class="gh-card-desc">Jumlahkan angka dalam grid (semua/positif/negatif/kolom) sebelum waktu habis.</div>
+              <button class="gh-btn gh-btn-primary" onclick="openGame('extreme-addition')">MAINKAN</button>
+            </div>
+            <div class="gh-card">
+              <div class="gh-card-icon">🧠</div>
+              <div class="gh-card-title">GRID MEMORY</div>
+              <div class="gh-card-desc">Ingat posisi ikon horor (👻💀🎃🕷️🦇) yang muncul sekilas, lalu tunjuk ulang.</div>
+              <button class="gh-btn gh-btn-primary" onclick="openGame('grid-memory')">MAINKAN</button>
+            </div>
+            <div class="gh-card">
+              <div class="gh-card-icon">🏎️</div>
+              <div class="gh-card-title">MATH DASH</div>
+              <div class="gh-card-desc">Jawab soal matematika cepat untuk memacu avatar 🏎️ menuju garis finish 🏁.</div>
+              <button class="gh-btn gh-btn-primary" onclick="openGame('math-dash')">MAINKAN</button>
+            </div>
+            <div class="gh-card">
+              <div class="gh-card-icon">🔍</div>
+              <div class="gh-card-title">FIXWORD</div>
+              <div class="gh-card-desc">Temukan kata yang salah dalam cerita horor misterius sebelum waktu habis.</div>
+              <button class="gh-btn gh-btn-primary" onclick="openGame('fixword')">MAINKAN</button>
+            </div>
+            <div class="gh-card">
+              <div class="gh-card-icon">🧩</div>
+              <div class="gh-card-title">IX-H MYSTERY</div>
+              <div class="gh-card-desc">Teka-Teki Silang (TTS) interaktif seputar misteri kelas dan hal gaib (24 Soal).</div>
+              <button class="gh-btn gh-btn-primary" onclick="openGame('ix-h-mystery')">MAINKAN</button>
+            </div>
+            <div class="gh-card">
+              <div class="gh-card-icon">👻</div>
+              <div class="gh-card-title">GHOST REFLEX</div>
+              <div class="gh-card-desc">Tes kecepatan reaksi instan dalam milidetik (ms) saat sinyal gaib muncul!</div>
+              <button class="gh-btn gh-btn-primary" onclick="openGame('ghost-reflex')">MAINKAN</button>
+            </div>
+            <div class="gh-card">
+              <div class="gh-card-icon">🔮</div>
+              <div class="gh-card-title">ORACLE SEQUENCE</div>
+              <div class="gh-card-desc">Ritual mengingat urutan kilatan 4 simbol mistis yang semakin panjang.</div>
+              <button class="gh-btn gh-btn-primary" onclick="openGame('oracle-sequence')">MAINKAN</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== GAME 1: MENTAL CALCULATION ==================== -->
+        <div id="ghPlayArea" class="gh-play-area">
+          <div class="gh-header-bar">
+            <button id="ghBackBtn" class="gh-btn" style="width:auto; padding:6px 16px;"><i class="fas fa-arrow-left"></i> Kembali ke Hub</button>
+            <h3 style="color:#fff; font-size:1.1rem;"><i class="fas fa-calculator text-crimson"></i> Mental Calculation</h3>
+          </div>
+
+          <!-- Screen Start -->
+          <div id="ghScreenStart" class="gh-screen active">
+            <div class="gh-result-box">
+              <h4 style="color:#fff; font-size:1.2rem; margin-bottom:12px;">Pilih Tingkat Kesulitan</h4>
+              <div id="ghDifficultyRow" class="gh-diff-row"></div>
+              <div style="margin-bottom:20px; font-size:0.85rem; color:var(--text-silver);">
+                Level: <strong id="ghStartLevel" style="color:#fff;">1/4</strong> · Rekor Terbaik: <strong id="ghStartBest" class="text-crimson">—</strong>
+              </div>
+              <div style="margin-bottom:20px;">
+                <label style="font-size:0.8rem; color:var(--text-muted); display:block; margin-bottom:6px;">Jumlah Soal</label>
+                <input type="number" id="ghQuestionCountInput" value="10" min="5" max="50" class="form-input" style="max-width:120px; text-align:center; margin:0 auto;">
+              </div>
+              <button id="ghEnterBtn" class="gh-btn gh-btn-primary"><i class="fas fa-play"></i> MULAI SEKARANG</button>
+            </div>
+          </div>
+
+          <!-- Screen Play -->
+          <div id="ghScreenPlay" class="gh-screen">
+            <div class="gh-game-hud">
+              <div class="gh-hud-item"><i class="fas fa-clock text-crimson"></i> Sisa: <strong id="ghPlayTimer">60</strong>s</div>
+              <div class="gh-hud-item"><i class="fas fa-tasks text-crimson"></i> Soal: <strong id="ghPlayProgress">1/10</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-star text-crimson"></i> Skor: <strong id="ghPlayScore">0</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-fire text-crimson"></i> Combo: <strong id="ghPlayCombo">×1</strong></div>
+            </div>
+
+            <div class="gh-result-box" style="margin-top:20px;">
+              <div id="ghQuestionText" style="font-size:2.8rem; font-weight:800; color:#fff; font-family:var(--font-mono); margin-bottom:20px;">12 + 15</div>
+              <div style="display:flex; gap:10px; max-width:300px; margin:0 auto 16px;">
+                <input type="number" id="ghAnswerInput" class="form-input" placeholder="Jawabanmu..." style="text-align:center; font-size:1.3rem; font-weight:700;">
+                <button id="ghSubmitAnswerBtn" class="gh-btn gh-btn-primary" style="width:auto; padding:0 20px;"><i class="fas fa-check"></i></button>
+              </div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Tekan Enter untuk kirim jawaban cepat</span>
+            </div>
+          </div>
+
+          <!-- Screen Result -->
+          <div id="ghScreenResult" class="gh-screen">
+            <div class="gh-result-box">
+              <div style="font-size:2.5rem; margin-bottom:10px;">🏆</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:4px;">Permainan Selesai!</h4>
+              <div id="ghResultScore" class="gh-result-score">0</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.85rem; margin-bottom:20px;">
+                <div>Rekor: <strong id="ghResultBest" class="text-crimson">—</strong></div>
+                <div>Akurasi: <strong id="ghResultAccuracy">0%</strong></div>
+                <div>Combo Maks: <strong id="ghResultCombo">0</strong></div>
+                <div>Peringkat: <strong id="ghResultRank" class="text-crimson">A</strong></div>
+              </div>
+              <button id="ghPlayAgainBtn" class="gh-btn gh-btn-primary"><i class="fas fa-redo"></i> MAIN LAGI</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== GAME 2: GHOST REFLEX ==================== -->
+        <div id="ghReflexArea" class="gh-play-area">
+          <div class="gh-header-bar">
+            <button id="ghReflexBackBtn" class="gh-btn" style="width:auto; padding:6px 16px;"><i class="fas fa-arrow-left"></i> Kembali ke Hub</button>
+            <h3 style="color:#fff; font-size:1.1rem;"><i class="fas fa-ghost text-crimson"></i> Ghost Reflex (Tes Reaksi ms)</h3>
+          </div>
+
+          <!-- Screen Start -->
+          <div id="ghReflexScreenStart" class="gh-screen active">
+            <div class="gh-result-box">
+              <div style="font-size:3.5rem; margin-bottom:12px;">👻</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:8px;">Uji Kecepatan Refleks Gaib</h4>
+              <p style="font-size:0.85rem; color:var(--text-silver); margin-bottom:20px; line-height:1.5;">
+                Saat sinyal berubah <strong style="color:#22c55e;">HIJAU</strong> dan simbol hantu muncul, klik secepat mungkin! Jangan klik saat masih merah.
+              </p>
+              <div style="margin-bottom:20px; font-size:0.85rem; color:var(--text-silver);">
+                Rekor Terbaik: <strong id="ghReflexStartBest" class="text-crimson">—</strong>
+              </div>
+              <button id="ghReflexEnterBtn" class="gh-btn gh-btn-primary"><i class="fas fa-play"></i> MULAI TES REFLEKS</button>
+            </div>
+          </div>
+
+          <!-- Screen Play -->
+          <div id="ghReflexScreenPlay" class="gh-screen">
+            <div class="gh-game-hud">
+              <div class="gh-hud-item"><i class="fas fa-flag text-crimson"></i> Ronde: <strong id="ghReflexRoundProgress">1/5</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-stopwatch text-crimson"></i> Terakhir: <strong id="ghReflexLastTime">—</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-tachometer-alt text-crimson"></i> Rata-rata: <strong id="ghReflexAvgTime">—</strong></div>
+            </div>
+
+            <div id="ghReflexTarget" class="gh-reflex-target-area wait">
+              <div id="ghReflexIcon" class="gh-reflex-icon">🔴</div>
+              <div id="ghReflexInstruction" class="gh-reflex-title">Tunggu aba-aba...</div>
+              <div id="ghReflexSubtext" class="gh-reflex-sub">Jangan klik dulu sebelum layar berubah hijau!</div>
+            </div>
+          </div>
+
+          <!-- Screen Result -->
+          <div id="ghReflexScreenResult" class="gh-screen">
+            <div class="gh-result-box">
+              <div style="font-size:2.5rem; margin-bottom:10px;">⚡</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:4px;">Hasil Tes Refleks</h4>
+              <div id="ghReflexResultScore" class="gh-result-score">0 ms</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.85rem; margin-bottom:20px;">
+                <div>Tercepat: <strong id="ghReflexResultBest" class="text-crimson">—</strong></div>
+                <div>Kategori: <strong id="ghReflexResultSpeed">Normal</strong></div>
+                <div>Peringkat: <strong id="ghReflexResultRank" class="text-crimson">S</strong></div>
+              </div>
+              <button id="ghReflexPlayAgainBtn" class="gh-btn gh-btn-primary"><i class="fas fa-redo"></i> TES LAGI</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== GAME 3: ORACLE SEQUENCE ==================== -->
+        <div id="ghSeqArea" class="gh-play-area">
+          <div class="gh-header-bar">
+            <button id="ghSeqBackBtn" class="gh-btn" style="width:auto; padding:6px 16px;"><i class="fas fa-arrow-left"></i> Kembali ke Hub</button>
+            <h3 style="color:#fff; font-size:1.1rem;"><i class="fas fa-magic text-crimson"></i> Oracle Sequence (Ritual Hafalan)</h3>
+          </div>
+
+          <!-- Screen Start -->
+          <div id="ghSeqScreenStart" class="gh-screen active">
+            <div class="gh-result-box">
+              <div style="font-size:3.5rem; margin-bottom:12px;">🔮</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:8px;">Ritual Mengingat Pola Gaib</h4>
+              <p style="font-size:0.85rem; color:var(--text-silver); margin-bottom:20px; line-height:1.5;">
+                Perhatikan urutan kilatan 4 simbol mistis, lalu tiru urutannya secara tepat. Tiap ronde pola akan bertambah panjang!
+              </p>
+              <div style="margin-bottom:20px; font-size:0.85rem; color:var(--text-silver);">
+                Ronde Tertinggi: <strong id="ghSeqStartBest" class="text-crimson">—</strong>
+              </div>
+              <button id="ghSeqEnterBtn" class="gh-btn gh-btn-primary"><i class="fas fa-play"></i> MULAI RITUAL</button>
+            </div>
+          </div>
+
+          <!-- Screen Play -->
+          <div id="ghSeqScreenPlay" class="gh-screen">
+            <div class="gh-game-hud">
+              <div class="gh-hud-item"><i class="fas fa-layer-group text-crimson"></i> Status: <strong id="ghSeqRoundProgress">Ronde 1</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-star text-crimson"></i> Skor: <strong id="ghSeqScore">0</strong></div>
+            </div>
+
+            <div id="ghSeqStatus" style="text-align:center; color:var(--accent-crimson-glow); font-weight:700; margin-bottom:16px;">Perhatikan polanya...</div>
+
+            <div class="gh-sequence-grid">
+              <button class="gh-sequence-btn" data-seq="0">
+                👻 <span>Hantu</span>
+              </button>
+              <button class="gh-sequence-btn" data-seq="1">
+                💀 <span>Tengkorak</span>
+              </button>
+              <button class="gh-sequence-btn" data-seq="2">
+                🕯️ <span>Lilin</span>
+              </button>
+              <button class="gh-sequence-btn" data-seq="3">
+                🔮 <span>Bola Gaib</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Screen Result -->
+          <div id="ghSeqScreenResult" class="gh-screen">
+            <div class="gh-result-box">
+              <div style="font-size:2.5rem; margin-bottom:10px;">💀</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:4px;">Ritual Berakhir!</h4>
+              <div id="ghSeqResultScore" class="gh-result-score">0</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.85rem; margin-bottom:20px;">
+                <div>Pencapaian: <strong id="ghSeqResultRound" class="text-crimson">Ronde 1</strong></div>
+                <div>Peringkat: <strong id="ghSeqResultRank" class="text-crimson">A</strong></div>
+              </div>
+              <button id="ghSeqPlayAgainBtn" class="gh-btn gh-btn-primary"><i class="fas fa-redo"></i> COBA LAGI</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== GAME 4: IX-H MYSTERY (TTS HOROR) ==================== -->
+        <div id="ghMysteryArea" class="gh-play-area">
+          <div class="gh-header-bar">
+            <button id="ghMysteryBackBtn" class="gh-btn" style="width:auto; padding:6px 16px;"><i class="fas fa-arrow-left"></i> Kembali ke Hub</button>
+            <h3 style="color:#fff; font-size:1.1rem;"><i class="fas fa-puzzle-piece text-crimson"></i> IX-H Mystery (Teka-Teki Silang Horor)</h3>
+          </div>
+
+          <div class="tts-game-container">
+            <div class="tts-header-bar">
+              <div class="tts-stat"><i class="fas fa-clock text-crimson"></i> Waktu: <strong id="cwTimer">00:00</strong></div>
+              <div class="tts-stat"><i class="fas fa-star text-crimson"></i> Terpecahkan: <strong id="cwProgress">0/35</strong></div>
+              <div class="tts-stat"><i class="fas fa-lightbulb text-crimson"></i> Bantuan: <strong id="cwHints">8</strong></div>
+              <button id="cwHintBtn" class="gh-btn" style="width:auto; padding:4px 12px; font-size:0.75rem;"><i class="fas fa-magic"></i> Hint</button>
+            </div>
+
+            <div class="tts-layout">
+              <div class="crossword-board-wrap">
+                <div id="crosswordGrid" class="crossword-grid">
+                  <!-- Rendered by crossword.js -->
+                </div>
+              </div>
+
+              <div class="cw-clues-wrap">
+                <div class="clue-group">
+                  <h4><i class="fas fa-arrow-right"></i> MENDATAR</h4>
+                  <ul id="cluesAcross" class="clue-list"></ul>
+                </div>
+                <div class="clue-group">
+                  <h4><i class="fas fa-arrow-down"></i> MENURUN</h4>
+                  <ul id="cluesDown" class="clue-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== GAME 5: EXTREME ADDITION ==================== -->
+        <div id="ghExtremeArea" class="gh-play-area">
+          <div class="gh-header-bar">
+            <button id="ghExtremeBackBtn" class="gh-btn" style="width:auto; padding:6px 16px;"><i class="fas fa-arrow-left"></i> Kembali ke Hub</button>
+            <h3 style="color:#fff; font-size:1.1rem;"><i class="fas fa-bolt text-crimson"></i> Extreme Addition</h3>
+          </div>
+
+          <!-- Screen Start -->
+          <div id="ghExtremeScreenStart" class="gh-screen active">
+            <div class="gh-result-box">
+              <div style="font-size:3.5rem; margin-bottom:12px;">⚡</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:8px;">Tantangan Penjumlahan Kilat</h4>
+              <p style="font-size:0.85rem; color:var(--text-silver); margin-bottom:16px; line-height:1.5;">
+                Jumlahkan angka di dalam grid sesuai instruksi (semua / positif / negatif / kelipatan 3) sebelum waktu habis!
+              </p>
+              <div class="gh-diff-row" id="ghExtremeDiffRow"></div>
+              <div style="display:flex; justify-content:center; gap:16px; margin-bottom:20px;">
+                <div>
+                  <label style="font-size:0.75rem; color:var(--text-muted); display:block; margin-bottom:4px;">Ukuran Grid</label>
+                  <select id="ghExtremeGridSize" class="form-input" style="padding:4px 10px; font-size:0.85rem;">
+                    <option value="3">3 x 3 (9 Angka)</option>
+                    <option value="4">4 x 4 (16 Angka)</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size:0.75rem; color:var(--text-muted); display:block; margin-bottom:4px;">Jumlah Ronde</label>
+                  <input type="number" id="ghExtremeRoundsInput" value="5" min="3" max="15" class="form-input" style="width:80px; text-align:center; padding:4px 10px; font-size:0.85rem;">
+                </div>
+              </div>
+              <button id="ghExtremeEnterBtn" class="gh-btn gh-btn-primary"><i class="fas fa-play"></i> MULAI TANTANGAN</button>
+            </div>
+          </div>
+
+          <!-- Screen Play -->
+          <div id="ghExtremeScreenPlay" class="gh-screen">
+            <div class="gh-game-hud">
+              <div class="gh-hud-item"><i class="fas fa-clock text-crimson"></i> Sisa: <strong id="ghExtremeTimer">15</strong>s</div>
+              <div class="gh-hud-item"><i class="fas fa-layer-group text-crimson"></i> Ronde: <strong id="ghExtremeRound">1/5</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-star text-crimson"></i> Skor: <strong id="ghExtremeScore">0</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-fire text-crimson"></i> Combo: <strong id="ghExtremeCombo">×1</strong></div>
+            </div>
+
+            <div class="gh-extreme-instruction-box">
+              <div class="gh-extreme-rule-text" id="ghExtremeRuleText">Jumlahkan SEMUA angka di bawah!</div>
+            </div>
+
+            <div id="ghExtremeGrid" class="gh-extreme-grid grid-3x3">
+              <!-- Rendered by JS -->
+            </div>
+
+            <div style="display:flex; gap:10px; max-width:280px; margin:0 auto;">
+              <input type="number" id="ghExtremeAnswerInput" class="form-input" placeholder="Total hasil..." style="text-align:center; font-size:1.3rem; font-weight:700;">
+              <button id="ghExtremeSubmitBtn" class="gh-btn gh-btn-primary" style="width:auto; padding:0 20px;"><i class="fas fa-check"></i></button>
+            </div>
+          </div>
+
+          <!-- Screen Result -->
+          <div id="ghExtremeScreenResult" class="gh-screen">
+            <div class="gh-result-box">
+              <div style="font-size:2.5rem; margin-bottom:10px;">⚡</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:4px;">Extreme Addition Selesai!</h4>
+              <div id="ghExtremeResultScore" class="gh-result-score">0</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.85rem; margin-bottom:20px;">
+                <div>Akurasi: <strong id="ghExtremeAccuracy">100%</strong></div>
+                <div>Peringkat: <strong id="ghExtremeRank" class="text-crimson">SS</strong></div>
+              </div>
+              <button id="ghExtremePlayAgainBtn" class="gh-btn gh-btn-primary"><i class="fas fa-redo"></i> MAIN LAGI</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== GAME 6: GRID MEMORY ==================== -->
+        <div id="ghMemoryArea" class="gh-play-area">
+          <div class="gh-header-bar">
+            <button id="ghMemoryBackBtn" class="gh-btn" style="width:auto; padding:6px 16px;"><i class="fas fa-arrow-left"></i> Kembali ke Hub</button>
+            <h3 style="color:#fff; font-size:1.1rem;"><i class="fas fa-brain text-crimson"></i> Grid Memory (Ingatan Ikon Horor)</h3>
+          </div>
+
+          <!-- Screen Start -->
+          <div id="ghMemoryScreenStart" class="gh-screen active">
+            <div class="gh-result-box">
+              <div style="font-size:3.5rem; margin-bottom:12px;">🧠</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:8px;">Uji Ingatan Visual Mistis</h4>
+              <p style="font-size:0.85rem; color:var(--text-silver); margin-bottom:16px; line-height:1.5;">
+                Ingat posisi ikon horor (👻, 💀, 🎃, 🕷️, 🦇) yang muncul sekilas di grid, lalu klik ulang posisi ikon yang diminta!
+              </p>
+              <div class="gh-diff-row" id="ghMemoryDiffRow"></div>
+              <button id="ghMemoryEnterBtn" class="gh-btn gh-btn-primary"><i class="fas fa-play"></i> MULAI INGATAN</button>
+            </div>
+          </div>
+
+          <!-- Screen Play -->
+          <div id="ghMemoryScreenPlay" class="gh-screen">
+            <div class="gh-game-hud">
+              <div class="gh-hud-item"><i class="fas fa-clock text-crimson"></i> Status: <strong id="ghMemoryStatus">Perhatikan...</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-layer-group text-crimson"></i> Level: <strong id="ghMemoryLevel">1</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-star text-crimson"></i> Skor: <strong id="ghMemoryScore">0</strong></div>
+            </div>
+
+            <div style="text-align:center; font-size:1rem; font-weight:700; color:#fff; margin-bottom:16px;" id="ghMemoryPrompt">
+              Menghafal posisi ikon...
+            </div>
+
+            <div id="ghMemoryGrid" class="gh-memory-grid grid-3x3">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Screen Result -->
+          <div id="ghMemoryScreenResult" class="gh-screen">
+            <div class="gh-result-box">
+              <div style="font-size:2.5rem; margin-bottom:10px;">💀</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:4px;">Tes Ingatan Selesai!</h4>
+              <div id="ghMemoryResultScore" class="gh-result-score">0</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.85rem; margin-bottom:20px;">
+                <div>Level Tertinggi: <strong id="ghMemoryResultLevel" class="text-crimson">Level 1</strong></div>
+                <div>Peringkat: <strong id="ghMemoryResultRank" class="text-crimson">A</strong></div>
+              </div>
+              <button id="ghMemoryPlayAgainBtn" class="gh-btn gh-btn-primary"><i class="fas fa-redo"></i> MAIN LAGI</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== GAME 7: MATH DASH ==================== -->
+        <div id="ghDashArea" class="gh-play-area">
+          <div class="gh-header-bar">
+            <button id="ghDashBackBtn" class="gh-btn" style="width:auto; padding:6px 16px;"><i class="fas fa-arrow-left"></i> Kembali ke Hub</button>
+            <h3 style="color:#fff; font-size:1.1rem;"><i class="fas fa-tachometer-alt text-crimson"></i> Math Dash (Pacu Garis Finish)</h3>
+          </div>
+
+          <!-- Screen Start -->
+          <div id="ghDashScreenStart" class="gh-screen active">
+            <div class="gh-result-box">
+              <div style="font-size:3.5rem; margin-bottom:12px;">🏎️</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:8px;">Pacu Avatar Menuju Finish</h4>
+              <p style="font-size:0.85rem; color:var(--text-silver); margin-bottom:16px; line-height:1.5;">
+                Jawab soal hitungan cepat untuk memacu avatarmu 🏎️ mendahului kejaran hantu gaib 👻 menuju garis finish 🏁!
+              </p>
+              <div class="gh-diff-row" id="ghDashDiffRow"></div>
+              <button id="ghDashEnterBtn" class="gh-btn gh-btn-primary"><i class="fas fa-play"></i> GAS SEKARANG</button>
+            </div>
+          </div>
+
+          <!-- Screen Play -->
+          <div id="ghDashScreenPlay" class="gh-screen">
+            <div class="gh-dash-track">
+              <div class="gh-dash-lane">
+                <span class="gh-dash-runner" id="ghDashCar" style="left:5%;">🏎️</span>
+                <div class="gh-dash-finish"></div>
+              </div>
+              <div class="gh-dash-lane">
+                <span class="gh-dash-runner" id="ghDashGhost" style="left:0%;">👻</span>
+                <div class="gh-dash-finish"></div>
+              </div>
+            </div>
+
+            <div class="gh-game-hud" style="margin-bottom:16px;">
+              <div class="gh-hud-item"><i class="fas fa-road text-crimson"></i> Jarak: <strong id="ghDashDistance">5%</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-star text-crimson"></i> Skor: <strong id="ghDashScore">0</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-fire text-crimson"></i> Combo: <strong id="ghDashCombo">×1</strong></div>
+            </div>
+
+            <div class="gh-result-box" style="padding:18px;">
+              <div id="ghDashQuestion" style="font-size:2.4rem; font-weight:800; color:#fff; font-family:var(--font-mono); margin-bottom:16px;">15 + 27</div>
+              <div id="ghDashChoices" class="gh-dash-choices">
+                <!-- 4 Choices Rendered by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen Result -->
+          <div id="ghDashScreenResult" class="gh-screen">
+            <div class="gh-result-box">
+              <div id="ghDashResultIcon" style="font-size:3rem; margin-bottom:10px;">🏆</div>
+              <h4 id="ghDashResultTitle" style="color:#fff; font-size:1.3rem; margin-bottom:4px;">Berhasil Sampai Finish!</h4>
+              <div id="ghDashResultScore" class="gh-result-score">0</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.85rem; margin-bottom:20px;">
+                <div>Waktu Tempuh: <strong id="ghDashResultTime" class="text-crimson">12.4s</strong></div>
+                <div>Peringkat: <strong id="ghDashResultRank" class="text-crimson">SS</strong></div>
+              </div>
+              <button id="ghDashPlayAgainBtn" class="gh-btn gh-btn-primary"><i class="fas fa-redo"></i> PACU LAGI</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== GAME 8: FIXWORD ==================== -->
+        <div id="ghFixwordArea" class="gh-play-area">
+          <div class="gh-header-bar">
+            <button id="ghFixwordBackBtn" class="gh-btn" style="width:auto; padding:6px 16px;"><i class="fas fa-arrow-left"></i> Kembali ke Hub</button>
+            <h3 style="color:#fff; font-size:1.1rem;"><i class="fas fa-search text-crimson"></i> FixWord (Temukan Kata Salah)</h3>
+          </div>
+
+          <!-- Screen Start -->
+          <div id="ghFixwordScreenStart" class="gh-screen active">
+            <div class="gh-result-box">
+              <div style="font-size:3.5rem; margin-bottom:12px;">🔍</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:8px;">Detektif Misteri Kata</h4>
+              <p style="font-size:0.85rem; color:var(--text-silver); margin-bottom:16px; line-height:1.5;">
+                Baca kisah misteri horor singkat, lalu klik tepat pada <strong>KATA YANG SALAH / JANGGAL</strong> sebelum waktu habis!
+              </p>
+              <div class="gh-diff-row" id="ghFixwordDiffRow"></div>
+              <button id="ghFixwordEnterBtn" class="gh-btn gh-btn-primary"><i class="fas fa-play"></i> MULAI DETEKTIF</button>
+            </div>
+          </div>
+
+          <!-- Screen Play -->
+          <div id="ghFixwordScreenPlay" class="gh-screen">
+            <div class="gh-game-hud">
+              <div class="gh-hud-item"><i class="fas fa-clock text-crimson"></i> Sisa: <strong id="ghFixwordTimer">15</strong>s</div>
+              <div class="gh-hud-item"><i class="fas fa-layer-group text-crimson"></i> Soal: <strong id="ghFixwordProgress">1/5</strong></div>
+              <div class="gh-hud-item"><i class="fas fa-star text-crimson"></i> Skor: <strong id="ghFixwordScore">0</strong></div>
+            </div>
+
+            <div class="gh-fixword-container">
+              <div style="font-size:0.85rem; color:var(--accent-crimson-glow); margin-bottom:10px; text-align:center;">Klik kata yang janggal/salah:</div>
+              <div id="ghFixwordStory" class="gh-fixword-story">
+                <!-- Rendered by JS as clickable tokens -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen Result -->
+          <div id="ghFixwordScreenResult" class="gh-screen">
+            <div class="gh-result-box">
+              <div style="font-size:2.5rem; margin-bottom:10px;">🔍</div>
+              <h4 style="color:#fff; font-size:1.3rem; margin-bottom:4px;">Investigasi Selesai!</h4>
+              <div id="ghFixwordResultScore" class="gh-result-score">0</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.85rem; margin-bottom:20px;">
+                <div>Benar: <strong id="ghFixwordCorrectCount" class="text-crimson">5/5</strong></div>
+                <div>Peringkat: <strong id="ghFixwordResultRank" class="text-crimson">SS</strong></div>
+              </div>
+              <button id="ghFixwordPlayAgainBtn" class="gh-btn gh-btn-primary"><i class="fas fa-redo"></i> INVESTIGASI LAGI</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== HALL OF FAME LEADERBOARD ==================== -->
+        <div id="ghHOFArea" class="gh-play-area">
+          <div class="gh-header-bar">
+            <button id="ghHOFBackBtn" class="gh-btn" style="width:auto; padding:6px 16px;"><i class="fas fa-arrow-left"></i> Kembali ke Hub</button>
+            <h3 style="color:#fff; font-size:1.1rem;"><i class="fas fa-trophy text-crimson"></i> Hall of Fame · Rekor Pemain</h3>
+          </div>
+
+          <div style="background:rgba(0,0,0,0.4); border:1px solid var(--border-subtle); border-radius:16px; padding:20px; max-width:700px; margin:0 auto;">
+            <!-- Category Filter Tabs -->
+            <div class="gh-hof-filters" id="hofFilters">
+              <button class="gh-hof-tab active" data-game="all">Semua Game</button>
+              <button class="gh-hof-tab" data-game="mental-calculation">🔢 Mental Calc</button>
+              <button class="gh-hof-tab" data-game="extreme-addition">⚡ Extreme Addition</button>
+              <button class="gh-hof-tab" data-game="grid-memory">🧠 Grid Memory</button>
+              <button class="gh-hof-tab" data-game="math-dash">🏎️ Math Dash</button>
+              <button class="gh-hof-tab" data-game="fixword">🔍 FixWord</button>
+              <button class="gh-hof-tab" data-game="ix-h-mystery">🧩 IX-H Mystery</button>
+              <button class="gh-hof-tab" data-game="ghost-reflex">👻 Ghost Reflex</button>
+            </div>
+
+            <div style="overflow-x:auto;">
+              <table class="schedule-table" id="hofTable">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Permainan</th>
+                    <th>Pemain</th>
+                    <th>Level</th>
+                    <th>Skor Terbaik</th>
+                  </tr>
+                </thead>
+                <tbody id="hofTableBody">
+                  <!-- Rendered dynamically by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         LOKASI SEKOLAH & KELAS IX-H (GOOGLE MAPS)
+         ========================================================= -->
+    <section id="lokasi" class="section-pad">
+      <h2 class="section-title font-horror">LOKASI SEKOLAH & MARKAS IX-H</h2>
+      <p class="section-subtitle">
+        Peta dan petunjuk arah resmi menuju kampus <strong>SMP Negeri 1 Bojongsari (SPENSARI)</strong> dan ruang kelas IX-H.
+      </p>
+
+      <div class="location-grid">
+        <!-- Left Column: Map Viewer Card -->
+        <div class="glass-panel map-card-wrapper" style="padding: 20px;">
+          <div class="map-view-container" id="mapViewContainer">
+            <!-- Map Overlay Pin Badge -->
+            <div class="map-overlay-badge">
+              <i class="fas fa-map-marker-alt badge-icon"></i>
+              <div>
+                <h5>SMP NEGERI 1 BOJONGSARI</h5>
+                <span>📍 Gedung Utama · Ruang IX-H (Lantai 2)</span>
+              </div>
+            </div>
+
+            <!-- View Toggle Bar -->
+            <div class="map-toggle-bar">
+              <button id="mapStaticToggleBtn" class="map-toggle-btn active" onclick="switchMapView('static')">
+                <i class="fas fa-image"></i> Peta Statis
+              </button>
+              <button id="mapEmbedToggleBtn" class="map-toggle-btn" onclick="switchMapView('embed')">
+                <i class="fas fa-compass"></i> Interaktif
+              </button>
+            </div>
+
+            <!-- Static Map View (Google Maps Static API) -->
+            <div id="staticMapView" style="width:100%; height:100%;">
+              <img 
+                id="schoolStaticMapImg"
+                src="https://maps.googleapis.com/maps/api/staticmap?center=-7.348842,109.349635&zoom=16&size=750x450&scale=2&maptype=roadmap&markers=color:red%7Clabel:H%7C-7.348842,109.349635&style=element:geometry%7Ccolor:0x1e1e1e&style=element:labels.text.stroke%7Ccolor:0x1e1e1e&style=element:labels.text.fill%7Ccolor:0x8a8a8a&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0xdc2626&style=feature:road%7Celement:geometry%7Ccolor:0x2c2c2c&style=feature:road%7Celement:labels.text.fill%7Ccolor:0x9ca3af&style=feature:water%7Celement:geometry%7Ccolor:0x0f172a"
+                alt="Peta Lokasi SMP Negeri 1 Bojongsari Kelas IX-H"
+                class="map-static-img"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1000&q=80';"
+              />
+            </div>
+
+            <!-- Embed Map View (Iframe) -->
+            <div id="embedMapView" style="width:100%; height:100%; display:none;">
+              <iframe 
+                id="schoolMapIframe"
+                class="map-iframe"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.842774900139!2d109.34706007476142!3d-7.348842092659858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65597b878229b1%3A0x6b8764ff3f3a14e9!2sSMP%20Negeri%201%20Bojongsari!5e0!3m2!1sid!2sid!4v1716300000000!5m2!1sid!2sid"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Peta Interaktif SMP Negeri 1 Bojongsari">
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Action Buttons Bar -->
+          <div class="map-action-bar">
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=SMP+Negeri+1+Bojongsari" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="map-btn map-btn-primary"
+              id="openGoogleMapsBtn">
+              <i class="fas fa-external-link-alt"></i> Buka Google Maps
+            </a>
+            <a 
+              href="https://www.google.com/maps/dir/?api=1&destination=SMP+Negeri+1+Bojongsari" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="map-btn map-btn-secondary"
+              id="getRouteMapsBtn">
+              <i class="fas fa-directions text-crimson"></i> Petunjuk Rute
+            </a>
+            <button 
+              type="button" 
+              class="map-btn map-btn-secondary" 
+              id="copyAddressBtn"
+              onclick="copySchoolAddress()">
+              <i class="fas fa-copy"></i> <span id="copyAddressBtnText">Salin Alamat</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Location Details & Information -->
+        <div class="glass-panel location-info-card">
+          <div>
+            <h3 style="color:#fff; font-size:1.15rem; font-weight:800; margin-bottom:16px; display:flex; align-items:center; gap:10px;">
+              <i class="fas fa-school text-crimson"></i> Informasi Markas IX-H
+            </h3>
+
+            <div class="location-detail-list">
+              <div class="location-detail-item">
+                <div class="location-item-icon">
+                  <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <div class="location-item-content">
+                  <h4>Alamat Resmi Sekolah</h4>
+                  <p id="schoolAddressText">Jl. Raya Bojongsari, Dusun 1, Bojongsari, Kec. Bojongsari, Kabupaten Purbalingga, Jawa Tengah 53362</p>
+                </div>
+              </div>
+
+              <div class="location-detail-item">
+                <div class="location-item-icon">
+                  <i class="fas fa-door-open"></i>
+                </div>
+                <div class="location-item-content">
+                  <h4>Posisi Ruang Kelas IX-H</h4>
+                  <p>Gedung Utama Lantai 2 (Sayap Timur), bersebelahan dengan ruang multimedia dan menghadap langsung ke lapangan upacara utama.</p>
+                </div>
+              </div>
+
+              <div class="location-detail-item">
+                <div class="location-item-icon">
+                  <i class="fas fa-crosshairs"></i>
+                </div>
+                <div class="location-item-content">
+                  <h4>Titik Koordinat GPS</h4>
+                  <p><code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-family:'JetBrains Mono',monospace; color:var(--accent-platinum);">-7.348842, 109.349635</code></p>
+                </div>
+              </div>
+
+              <div class="location-detail-item">
+                <div class="location-item-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="location-item-content">
+                  <h4>Jam Belajar & Kegiatan</h4>
+                  <p>Senin – Jumat: 07.00 – 15.30 WIB<br><span style="font-size:0.75rem; color:var(--text-muted);">Sabtu – Minggu: Libur / Ekstrakurikuler Khusus</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Facility Chips -->
+          <div>
+            <div style="font-size:0.78rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px;">
+              Fasilitas Kampus Sekolah:
+            </div>
+            <div class="location-chips-row">
+              <span class="location-chip"><i class="fas fa-flask text-crimson"></i> Lab IPA</span>
+              <span class="location-chip"><i class="fas fa-desktop text-crimson"></i> Lab Komputer</span>
+              <span class="location-chip"><i class="fas fa-book text-crimson"></i> Perpustakaan</span>
+              <span class="location-chip"><i class="fas fa-futbol text-crimson"></i> Lapangan Olahraga</span>
+              <span class="location-chip"><i class="fas fa-mosque text-crimson"></i> Masjid Spensari</span>
+              <span class="location-chip"><i class="fas fa-music text-crimson"></i> Ruang Karawitan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FLOATING MINI MUSIC & AMBIENCE PLAYER (64 LAGU)
+       ========================================================= -->
+  <div class="floating-player" id="musicPlayerWidget">
+    <div class="player-icon-wrap" id="playPauseBtn" title="Putar / Jeda Musik">
+      <i class="fas fa-play" id="playIcon"></i>
+    </div>
+    <div class="player-info" id="openPlaylistBtn" style="cursor:pointer;" title="Buka Daftar Lagu">
+      <div class="player-title" id="currentSongDisplay">🎵 Breakbeat Horor IX-H</div>
+      <div class="player-status">
+        <span id="playerStatusText">Klik untuk putar</span>
+      </div>
+    </div>
+    <div class="soundwave" id="soundwaveAnim">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <button class="player-btn" id="prevBtn" title="Lagu Sebelumnya"><i class="fas fa-step-backward"></i></button>
+    <button class="player-btn" id="nextBtn" title="Lagu Berikutnya"><i class="fas fa-step-forward"></i></button>
+  </div>
+
+  <!-- Music Playlist Drawer Modal -->
+  <div class="modal-overlay" id="playlistModal">
+    <div style="background:var(--bg-card); border:1px solid var(--border-glow); border-radius:20px; padding:24px; width:100%; max-width:480px; position:relative; max-height:85vh; display:flex; flex-direction:column;">
+      <button class="modal-close-btn" id="closePlaylistModalBtn">&times;</button>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h3 style="color:#fff; font-size:1.15rem; font-weight:800;"><i class="fas fa-music text-crimson"></i> Playlist Lagu (64 Lagu)</h3>
+      </div>
+      <div style="display:flex; gap:8px; margin-bottom:14px;">
+        <button id="modeNormalBtn" class="filter-btn" style="flex:1;">🎧 32 Lagu Normal</button>
+        <button id="modeHororBtn" class="filter-btn active" style="flex:1;">👻 32 Breakbeat Horor</button>
+      </div>
+      <div id="daftarLaguList" style="flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:6px; margin-bottom:14px; padding-right:4px;">
+        <!-- Rendered by app.js -->
+      </div>
+      <div id="pagination" style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       3D ID CARD FLIP MODAL (KARTU PELAJAR)
+       ========================================================= -->
+  <div class="modal-overlay" id="idCardModal">
+    <div class="id-card-wrapper">
+      <button class="modal-close-btn" id="closeIdCardModalBtn">&times;</button>
+      <div class="id-card-flip" id="idCardFlip">
+        <!-- Front Face -->
+        <div class="id-card-face id-card-front">
+          <div class="id-header">
+            <div class="id-school-info">
+              <h3>SMP NEGERI 1</h3>
+              <p>KARTU PELAJAR RESMI · KELAS IX-H</p>
+            </div>
+            <div class="id-class-badge">IX-H</div>
+          </div>
+          <div class="id-photo-area">
+            <div class="id-photo-frame">
+              <img id="idCardPhoto" src="wali.jpg" alt="Foto Pelajar" onerror="this.src='wali.jpg';">
+            </div>
+            <div class="id-student-name" id="idCardName">Nama Siswa</div>
+            <div class="id-student-nis" id="idCardNis">NISN: 2026.IXH.001</div>
+          </div>
+          <div class="id-details-grid">
+            <div class="id-detail-item">
+              <span>Nomor Absen</span>
+              <strong id="idCardAbsen">#01</strong>
+            </div>
+            <div class="id-detail-item">
+              <span>Jenis Kelamin</span>
+              <strong id="idCardGender">Laki-laki</strong>
+            </div>
+            <div class="id-detail-item" style="grid-column: span 2;">
+              <span>Cita-Cita Impian</span>
+              <strong id="idCardCita" class="text-crimson">🎯 Hakim</strong>
+            </div>
+          </div>
+          <div class="id-footer-bar">
+            <div class="id-barcode-container">
+              <div class="id-barcode">*IXH2026*</div>
+              <div class="id-barcode-sub">IXH-2026 · SPENSARI</div>
+            </div>
+            <div class="id-flip-hint"><i class="fas fa-sync-alt"></i> Klik untuk balik</div>
+          </div>
+        </div>
+
+        <!-- Back Face -->
+        <div class="id-card-face id-card-back">
+          <div class="id-back-content">
+            <div style="border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:8px;">
+              <h4 style="color:#fff; font-size:0.85rem; font-weight:800;">TATA TERTIB PENGHUNI IX-H</h4>
+            </div>
+            <div class="id-motto-box">
+              "Solidaritas tanpa batas. Sukses bersama, berjuang bersama."
+            </div>
+            <ul class="id-rules-list">
+              <li>1. Wajib menjaga kehormatan almamater dan nama baik kelas.</li>
+              <li>2. Hadir tepat waktu serta tertib dalam jam pelajaran.</li>
+              <li>3. Menjaga kebersihan meja dan area kelas setiap hari.</li>
+              <li>4. Saling mendukung dalam suka, duka, dan ujian sekolah.</li>
+            </ul>
+            <div class="id-signature-area">
+              <div class="id-signature-box">
+                <div class="id-signature-img">Hikmal S.</div>
+                <div class="id-signature-label">Ketua Kelas</div>
+              </div>
+              <div class="id-signature-box">
+                <div class="id-signature-img">Siti Nur S.</div>
+                <div class="id-signature-label">Wali Kelas IX-H</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="modal-close-btn" id="closeLightboxBtn" style="top:20px; right:20px;">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" class="lightbox-img" src="dok1.jpg" alt="Dokumentasi Zoom">
+      <div id="lightboxCaption" class="lightbox-caption">Dokumentasi IX-H</div>
+    </div>
+  </div>
+
+  <!-- Admin Modal -->
+  <div class="modal-overlay" id="adminModal">
+    <div style="background:var(--bg-card); border:1px solid var(--border-glow); border-radius:20px; padding:28px; width:100%; max-width:440px; position:relative;">
+      <button class="modal-close-btn" id="closeAdminModalBtn">&times;</button>
+      <h3 style="color:#fff; font-size:1.2rem; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+        <i class="fas fa-shield-alt text-crimson"></i> Portal Penguasa IX-H
+      </h3>
+
+      <div id="loginForm">
+        <div class="form-group">
+          <label class="form-label">Username</label>
+          <input type="text" id="loginUsername" class="form-input" placeholder="admin" value="admin">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" value="admin123">
+        </div>
+        <div id="loginError" style="color:#ef4444; font-size:0.8rem; margin-bottom:12px;"></div>
+        <button id="loginBtn" class="btn-primary">Masuk Portal</button>
+      </div>
+
+      <div id="adminPanel" style="display:none;">
+        <div style="background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.3); border-radius:10px; padding:12px; color:#22c55e; font-size:0.85rem; margin-bottom:16px; text-align:center;">
+          <i class="fas fa-check-circle"></i> Selamat Datang, Penguasa Kelas!
+        </div>
+        <p style="font-size:0.85rem; color:var(--text-silver); margin-bottom:16px;">
+          Anda memiliki hak akses penuh untuk mengelola arsip dokumentasi, berita acara, dan moderasi mading.
+        </p>
+        <button id="logoutBtn" class="gh-btn" style="background:rgba(239,68,68,0.2); border-color:#ef4444;">Keluar Sesi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-social-links">
+        <a href="https://www.instagram.com/theclass.of_ixh" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram @theclass.of_ixh"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@theclass.of_ix" target="_blank" rel="noopener noreferrer" class="social-btn" title="TikTok @theclass.of_ix"><i class="fab fa-tiktok"></i></a>
+        <a href="https://open.spotify.com/playlist/0BUiPuaXZNAJkvWwtMAWKj?si=2JIvzKKpSbCDq5LScpiGbQ&utm_source=copy-link&sci=spotify%3Acard-config%3A3J5erIHOw4xfXvRqtoOL8B" target="_blank" rel="noopener noreferrer" class="social-btn" title="Playlist Spotify IX-H"><i class="fab fa-spotify"></i></a>
+        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Grup WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p class="footer-text">
+        © 2026 <strong>IX-H SPENSARI</strong> · SMP NEGERI 1 · Dikelola dengan Solidaritas Abadi & Dedikasi Tertinggi
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="crossword.js"></script>
+  <script src="app.js"></script>
+  <script type="module" src="firebase-client.js"></script>
+
+  <!-- Mist Background Canvas Animation Script -->
+  <script>
+    (function initMist() {
+      const canvas = document.getElementById('mistCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let w = canvas.width = window.innerWidth;
+      let h = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', () => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      });
+
+      const particles = [];
+      for (let i = 0; i < 35; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 80 + 40,
+          dx: (Math.random() - 0.5) * 0.4,
+          dy: (Math.random() - 0.5) * 0.3,
+          opacity: Math.random() * 0.08 + 0.02
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach(p => {
+          p.x += p.dx;
+          p.y += p.dy;
+          if (p.x < -p.r) p.x = w + p.r;
+          if (p.x > w + p.r) p.x = -p.r;
+          if (p.y < -p.r) p.y = h + p.r;
+          if (p.y > h + p.r) p.y = -p.r;
+
+          const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+          grad.addColorStop(0, `rgba(220, 38, 38, ${p.opacity})`);
+          grad.addColorStop(1, 'transparent');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+
+    // Palette Switcher (Gothic Red / Moonlight Blue)
+    document.getElementById('themePaletteBtn')?.addEventListener('click', function() {
+      if (document.documentElement.getAttribute('data-theme') === 'moonlight') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'moonlight');
+      }
+    });
+
+    // Admin Modal Triggers
+    document.getElementById('openAdminBtn')?.addEventListener('click', () => {
+      document.getElementById('adminModal').classList.add('active');
+    });
+    document.getElementById('closeAdminModalBtn')?.addEventListener('click', () => {
+      document.getElementById('adminModal').classList.remove('active');
+    });
+
+    // Playlist Modal Triggers
+    document.getElementById('openPlaylistBtn')?.addEventListener('click', () => {
+      document.getElementById('playlistModal').classList.add('active');
+    });
+    document.getElementById('closePlaylistModalBtn')?.addEventListener('click', () => {
+      document.getElementById('playlistModal').classList.remove('active');
+    });
+
+    // 3D Card Modal Triggers
+    document.getElementById('closeIdCardModalBtn')?.addEventListener('click', () => {
+      document.getElementById('idCardModal').classList.remove('active');
+    });
+    document.getElementById('idCardFlip')?.addEventListener('click', function() {
+      this.classList.toggle('flipped');
+    });
+
+    // Close Modals on click outside
+    window.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal-overlay')) {
+        e.target.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>
